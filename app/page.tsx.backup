@@ -6,7 +6,6 @@ import Process from './components/Process';
 import { Faq5 } from './components/Faq5';
 import { Stats12 } from './components/Stats12';
 import { Footer } from './components/Footer';
-import { Shader3 } from '@/components/ui/shader-background';
 
 export default function Home() {
   return (
@@ -215,9 +214,6 @@ export default function Home() {
       <Menu />
       <ThemeToggle />
       
-      {/* Shader Background */}
-      <Shader3 color="#bbffcc" />
-      
       <div className="content">
         <h1>At Novus, we shape tomorrow.</h1>
       </div>
@@ -267,32 +263,8 @@ export default function Home() {
       {/* Stats Section */}
       <Stats12 />
 
-      {/* Spacer before FAQ */}
-      <div style={{ position: 'relative', zIndex: 4, minHeight: '15vh' }}></div>
-
       {/* FAQ Section */}
-      <Faq5 
-        heading="Frequently Asked Questions"
-        description="Find out how Novus integrates into your company and amplifies your team's output."
-        faqs={[
-          {
-            question: "Will AI replace the personal touch in our processes?",
-            answer: "Absolutely not. Our goal is the opposite: to remove the robotic administrative tasks—like data entry, scheduling, and routine follow-ups—so your team can spend 100% of their time actually building relationships and solving complex problems for your clients."
-          },
-          {
-            question: "Do we need to change our current software stack?",
-            answer: "No. Novus builds \"layer-on-top\" automations. Whether you use Salesforce, HubSpot, AFAS, specific ERPs, or custom spreadsheets, our agents integrate directly into your existing workflow without requiring a messy platform migration."
-          },
-          {
-            question: "Will our contacts know they are interacting with an AI?",
-            answer: "It is highly unlikely. We train our agents specifically on your company's tone of voice and historical communication style. The result is a hyper-personalized experience where clients and stakeholders feel heard instantly, rather than waiting days for a manual reply."
-          },
-          {
-            question: "Is this limited to specific departments?",
-            answer: "No, Novus optimizes the full business spectrum. We eliminate bottlenecks wherever they exist in your operation—from automating sales outreach and customer support to streamlining finance, HR admin, and recruitment workflows."
-          }
-        ]}
-      />
+      <Faq5 />
 
       {/* Footer */}
       <Footer />
