@@ -182,7 +182,7 @@ const Shader3 = ({
         vec3 colA = u_bgColor;
         // Blend color with background for cleaner transitions
         vec3 darkColor = mix(u_bgColor, u_color, 0.15);
-        vec3 brightColor = mix(u_bgColor * 0.7, u_color, 0.85);
+        vec3 brightColor = mix(u_bgColor * 0.95, u_color, 0.85);
         vec3 colB = mix(darkColor, brightColor, a);
         return mix(colA, colB, d);
     }
