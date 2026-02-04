@@ -8,8 +8,13 @@ import About8 from '../components/About8';
 
 export default function About() {
   return (
-    <>
+    <div className="about-page-wrapper">
       <style jsx>{`
+        .about-page-wrapper {
+          overflow-x: hidden;
+          width: 100%;
+        }
+
         h2, h3 {
           transition: color 300ms ease;
         }
@@ -224,6 +229,6 @@ export default function About() {
 
       {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 }

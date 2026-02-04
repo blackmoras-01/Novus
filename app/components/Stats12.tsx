@@ -276,7 +276,7 @@ const Stats12 = ({ className }: Stats12Props) => {
           width: 100%;
           grid-template-columns: repeat(2, 1fr);
           gap: 3.5rem;
-          column-gap: 6rem;
+          column-gap: 1.5rem;
         }
 
         .stats-item {
@@ -294,7 +294,7 @@ const Stats12 = ({ className }: Stats12Props) => {
         }
 
         .stats-number {
-          font-size: clamp(2.5rem, 5vw, 3.75rem);
+          font-size: clamp(1.75rem, 5vw, 3.75rem);
           font-weight: 600;
           line-height: 1.1;
           margin-bottom: 0.5rem;
@@ -305,7 +305,7 @@ const Stats12 = ({ className }: Stats12Props) => {
         }
 
         .stats-label {
-          font-size: 0.875rem;
+          font-size: 0.75rem;
           opacity: 0.6;
         }
 
@@ -337,6 +337,14 @@ const Stats12 = ({ className }: Stats12Props) => {
         }
 
         @media (min-width: 1024px) {
+          .stats-grid {
+            column-gap: 6rem;
+          }
+
+          .stats-label {
+            font-size: 0.875rem;
+          }
+
           .stats-container {
             flex-direction: row;
             gap: 3rem;
