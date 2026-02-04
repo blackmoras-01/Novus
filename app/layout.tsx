@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: "Novus — Shaping Tomorrow",
   description: "Novus is a passionate team dedicated to creating innovative solutions that empower businesses to thrive in the digital age through automation and software integrations.",
   icons: {
-    icon: "/logo.svg",
+    icon: [
+      { url: "/logo.svg", type: "image/svg+xml" },
+      { url: "/logo.svg", type: "image/x-icon" },
+    ],
+    apple: "/logo.svg",
   },
 };
 
@@ -29,7 +33,11 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Favicon - Multiple formats for maximum browser compatibility */}
         <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+        <link rel="alternate icon" href="/logo.svg" />
+        <link rel="apple-touch-icon" href="/logo.svg" />
+        <link rel="shortcut icon" href="/logo.svg" />
       </head>
       <body>
         {children}
