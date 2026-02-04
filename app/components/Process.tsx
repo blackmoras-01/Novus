@@ -169,8 +169,9 @@ const Process = ({ className }: ProcessProps) => {
         .process-item {
           position: relative;
           display: flex;
-          flex-direction: column;
-          gap: 2.5rem;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 1rem;
           border-top: 1px solid rgba(0, 0, 0, 0.1);
           padding: 2rem 0;
         }
@@ -182,7 +183,7 @@ const Process = ({ className }: ProcessProps) => {
 
         @media (min-width: 768px) {
           .process-item {
-            flex-direction: row;
+            gap: 2.5rem;
             padding: 2.5rem 0;
           }
         }
@@ -205,7 +206,15 @@ const Process = ({ className }: ProcessProps) => {
         }
 
         .process-content {
-          flex: 1;
+          flex: 1 1 100%;
+          margin-top: 1rem;
+        }
+
+        @media (min-width: 768px) {
+          .process-content {
+            flex: 1 1 auto;
+            margin-top: 0;
+          }
         }
 
         .process-step-title {
