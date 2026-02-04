@@ -78,6 +78,7 @@ export default function About() {
           margin-left: -50vw;
           margin-right: -50vw;
           margin-bottom: 0;
+          z-index: 4;
         }
 
         .integration-content {

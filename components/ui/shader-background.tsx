@@ -182,7 +182,7 @@ const Shader3 = ({
         vec3 colA = u_bgColor;
         // Blend color with background for cleaner transitions
         vec3 darkColor = mix(u_bgColor, u_color, 0.15);
-        vec3 brightColor = mix(u_bgColor * 0.95, u_color, 0.85);
+        vec3 brightColor = mix(u_bgColor * 0.7, u_color, 0.85);
         vec3 colB = mix(darkColor, brightColor, a);
         return mix(colA, colB, d);
     }
@@ -295,6 +295,7 @@ const Shader3 = ({
   color = "#bbffcc",
 }: ShaderBackgroundProps) => {
   const [isLightMode, setIsLightMode] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkTheme = () => {
@@ -307,6 +308,17 @@ const Shader3 = ({
     observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const shaderUniforms = useMemo(

@@ -46,6 +46,9 @@ const Process = ({ className }: ProcessProps) => {
           background: #ffffff;
           color: #000000;
           transition: background 300ms ease, color 300ms ease;
+          width: 100vw;
+          margin-left: calc(50% - 50vw);
+          margin-right: calc(50% - 50vw);
         }
 
         /* Inverted colors - black background in light mode */
