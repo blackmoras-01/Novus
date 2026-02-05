@@ -5,13 +5,17 @@ export const metadata: Metadata = {
   title: "Novus — Shaping Tomorrow",
   description: "Novus is a passionate team dedicated to creating innovative solutions that empower businesses to thrive in the digital age through automation and software integrations.",
   icons: {
-    icon: [
-      { url: "/logo.ico", sizes: "any" },
-      { url: "/logo.svg", type: "image/svg+xml" },
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+    other: [
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        url: "/logo.svg",
+      },
     ],
-    apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -34,12 +38,11 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Favicon - Safari compatibility prioritized */}
-        <link rel="icon" href="/logo.ico" sizes="any" />
+        {/* Favicon - Safari .ico prioritized, Chrome gets SVG */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="shortcut icon" href="/logo.ico" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
       </head>
       <body>
         {children}
