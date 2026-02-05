@@ -6,18 +6,10 @@ export const metadata: Metadata = {
   description: "Novus is a passionate team dedicated to creating innovative solutions that empower businesses to thrive in the digital age through automation and software integrations.",
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png", sizes: "192x192" },
+      { url: "/logo.ico", sizes: "any" },
       { url: "/logo.svg", type: "image/svg+xml" },
-      { url: "/logo.svg", type: "image/x-icon" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-      { url: "/logo.svg" },
-    ],
-    other: [
-      { rel: "icon", url: "/logo-192.png", sizes: "192x192", type: "image/png" },
-      { rel: "icon", url: "/logo-512.png", sizes: "512x512", type: "image/png" },
-    ],
+    apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
 };
@@ -42,12 +34,11 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Favicon - Multiple formats for maximum browser compatibility */}
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+        {/* Favicon - Safari compatibility prioritized */}
+        <link rel="icon" href="/logo.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-        <link rel="alternate icon" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="/logo.ico" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body>
